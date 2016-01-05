@@ -118,7 +118,7 @@ namespace System.Net {
 
 		void Init ()
 		{
-			if (ssl_stream != null) {
+			if (ssl_stream != null && !ssl_stream.IsAuthenticated) {
 				ssl_stream.AuthenticateAsServer (cert, false, (SslProtocols)ServicePointManager.SecurityProtocol, false);
 			}
 
