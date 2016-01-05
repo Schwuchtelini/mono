@@ -46,6 +46,7 @@ using XX509CertificateCollection = PrebuiltSystem::System.Security.Cryptography.
 using XX509CertificateCollection = System.Security.Cryptography.X509Certificates.X509CertificateCollection;
 #endif
 
+using System;
 using System.IO;
 using System.Net.Sockets;
 using System.Text;
@@ -118,6 +119,8 @@ namespace System.Net {
 
 		void Init ()
 		{
+			Console.WriteLine("init ssl");
+			
 			if (ssl_stream != null && !ssl_stream.IsAuthenticated) {
 				ssl_stream.AuthenticateAsServer (cert, false, (SslProtocols)ServicePointManager.SecurityProtocol, false);
 			}
@@ -467,7 +470,7 @@ namespace System.Net {
 				}
 				*/
 
-				if (false && !force_close && context.Request.FlushInput ()) {
+				if (!force_close && context.Request.FlushInput ()) {
 					if (chunked && context.Response.ForceCloseChunked == false) {
 						// Don't close. Keep working.
 						reuses++;
