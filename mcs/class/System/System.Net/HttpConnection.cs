@@ -119,7 +119,7 @@ namespace System.Net {
 
 		void Init ()
 		{
-			Console.WriteLine("init ssl");
+			//Console.WriteLine("init ssl");
 			
 			if (ssl_stream != null && !ssl_stream.IsAuthenticated) {
 				ssl_stream.AuthenticateAsServer (cert, false, (SslProtocols)ServicePointManager.SecurityProtocol, false);
