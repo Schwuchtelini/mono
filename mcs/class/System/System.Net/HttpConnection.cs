@@ -46,7 +46,6 @@ using XX509CertificateCollection = PrebuiltSystem::System.Security.Cryptography.
 using XX509CertificateCollection = System.Security.Cryptography.X509Certificates.X509CertificateCollection;
 #endif
 
-using System;
 using System.IO;
 using System.Net.Sockets;
 using System.Text;
