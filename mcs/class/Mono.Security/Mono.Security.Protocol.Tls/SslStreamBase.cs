@@ -103,7 +103,8 @@ namespace Mono.Security.Protocol.Tls
 				catch (Exception ex)
 				{
 					this.protocol.SendAlert(ref ex);
-					throw new IOException("The authentication or decryption has failed.", ex);
+					//throw new IOException("The authentication or decryption has failed.", ex);
+					return;
 				}
 
 				if (internalResult.ProceedAfterHandshake)
