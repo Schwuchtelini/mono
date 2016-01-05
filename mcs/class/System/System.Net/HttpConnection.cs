@@ -467,7 +467,7 @@ namespace System.Net {
 				}
 				*/
 
-				if (true || !force_close && context.Request.FlushInput ()) {
+				if (false && !force_close && context.Request.FlushInput ()) {
 					if (chunked && context.Response.ForceCloseChunked == false) {
 						// Don't close. Keep working.
 						reuses++;
